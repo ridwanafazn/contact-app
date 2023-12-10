@@ -14,15 +14,6 @@ if (!fs.existsSync(dataPath)) {
     fs.writeFileSync(dataPath, '[]', 'utf-8')
 }
 
-
-// const pertanyaans = (pertanyaan) => {
-//     return new Promise((resolve, reject) => {
-//         rl.question(pertanyaan, (name) => {
-//             resolve(name);
-//         });
-//     });
-// };
-
 const loadContact = () => {
     const fileBuffer = fs.readFileSync('data/contacts.json', 'utf-8');
     const contacts = JSON.parse(fileBuffer);
@@ -79,11 +70,50 @@ const listContact = () => {
     console.log(
         chalk.cyan.inverse.bold(' Daftar Kontak : ')
     );
-    
+
     contacts.forEach((contact, i) => {
-        console.log(`${i+1}. ${contact.name} - ${contact.noHP}`);
+        console.log(`${i + 1}. ${contact.name} - ${contact.noHP}`);
     })
 };
 
+const detailContact = (name) => {
+    const contacts = loadContact();
+    const contact = contacts.find(
+        (contact) => contact.name.toLowerCase() === name.toLowerCase()
+    );
 
-module.exports = { simpanContact, listContact };
+    if (!contact) {
+        console.log(
+            chalk.red.inverse.bold(`${name} tidak ditemukan!`)
+        );
+        return false;
+    }
+    console.log(chalk.cyan.inverse.bold(contact.name));
+    console.log(contact.noHP);
+    if(contact.email){
+        console.log(contact.email);
+    }
+};
+
+const deleteContact = (name) => {
+    const contacts = loadContact();
+    const newContacts = contacts.filter(
+        (contact) => contact.name.toLowerCase() !== name.toLowerCase()
+    );
+
+    if (contacts.length === newContacts.length) {
+        console.log(chalk.red.inverse.bold(`${name} tidak ditemukan!`));
+        return false;
+    };
+
+    fs.writeFileSync('data/contacts.json', JSON.stringify(newContacts));
+
+    console.log(
+        chalk.green.inverse.bold(`data contact ${name} berhasil dihapus`)
+    )
+};
+
+
+
+
+module.exports = { simpanContact, listContact, detailContact, deleteContact };
