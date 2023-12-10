@@ -1,3 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/marhey');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
 body {
   background-color: #eee;
+}
+
+
+
+h1{
+    font-family: 'Marhey', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
 }

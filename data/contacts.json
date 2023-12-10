@@ -1,1 +1,22 @@
-[{"nama":"Fahmi Abdul Mughni","email":"fahmi@gmail.com","noHP":"085112341234"}]
+[
+    {
+        "nama": "Fahmi Abdul Mughni",
+        "email": "fahmi@gmail.com",
+        "noHP": "085112341234"
+    },
+    {
+        "nama": "Ridwan Ahmad Fauzan",
+        "email": "ridwanafzn@gmail.com",
+        "noHP": "085156020535"
+    },
+    {
+        "nama": "Andre Rangga Gintara",
+        "email": "andre@gmail.com",
+        "noHP": "085112341233"
+    },
+    {
+        "nama": "Ibu",
+        "email": "ibu@gmail.com",
+        "noHP": "0823123412334"
+    }
+]
