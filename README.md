@@ -12,4 +12,5 @@ Link YouTube : [Here](https://www.youtube.com/@sandhikagalihWPU)
 
 Kalian bisa cek preview berikut bagaimana aplikasi berjalan di localhost🤔
 
-[![Demo Contact App](https://img.youtube.com/vi/XtD-fwJlRgU/0.jpg)](https://www.youtube.com/watch?v=XtD-fwJlRgU)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XtD-fwJlRgU" frameborder="0" allowfullscreen></iframe>
+
